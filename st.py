@@ -4,9 +4,12 @@ import openai
 
 app = Flask(__name__)
 
-# Configurar la API Key y el ID del asistente
-OPENAI_API_KEY = "TU_API_KEY_AQUI"
-ASSISTANT_ID = "asst_JuGIZXo4JR3hiLKXYCZVEOdi"  # Reemplaza con tu ID
+import os
+
+# Obtener la API Key desde las variables de entorno
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+ASSISTANT_ID = os.getenv("ASSISTANT_ID")
+ # Reemplaza con tu ID
 
 client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
