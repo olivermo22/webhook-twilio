@@ -5,9 +5,8 @@ import openai
 app = Flask(__name__)
 
 # Configurar la API Key y el ID del asistente
-import os
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-ASSISTANT_ID = "asst_JuGIZXo4JR3hiLKXYCZVEOdi"  # Reemplaza con el ID de tu asistente
+OPENAI_API_KEY = "TU_API_KEY_AQUI"
+ASSISTANT_ID = "asst_JuGIZXo4JR3hiLKXYCZVEOdi"  # Reemplaza con tu ID
 
 client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
@@ -58,12 +57,4 @@ def whatsapp():
         return str(MessagingResponse().message("Ocurrió un error en el servidor."))
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
-
-
-
-
-
-
-
-    
+    app.run(port=5000, debug=True)  # Se vuelve a la versión inicial sin "host"
